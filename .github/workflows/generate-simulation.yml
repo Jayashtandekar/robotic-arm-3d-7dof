@@ -36,5 +36,8 @@ jobs:
             echo "No image changes to commit"
           else
             git commit -m "Add generated 7-DOF simulation GIF and plots [skip ci]"
-            git push
+            # README or docs may have changed while plotting; fast-forward on top of them.
+            git fetch origin main
+            git rebase origin/main
+            git push origin HEAD:main
           fi

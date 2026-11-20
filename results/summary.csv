@@ -1,0 +1,5 @@
+method,trials,successes,success_rate_pct,mean_runtime_s,mean_successful_joint_path_deg,mean_successful_ee_path_m,mean_successful_min_clearance_m,all_successful_paths_collision_checked
+A* (capped),3,0,0.0,1.5094,,,,True
+RRT,3,3,100.0,0.0275,266.28,2.6504,0.0342,True
+RRT-Connect,3,3,100.0,0.0247,310.88,3.4505,0.0268,True
+RRT*,3,3,100.0,0.7767,201.96,1.6828,0.0402,True

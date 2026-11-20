@@ -4,6 +4,27 @@ An **independently implemented 3D and 7-DOF educational simulation** comparing *
 
 **Scope:** This repository contains an independent educational implementation. It is not a physical-robot controller.
 
+## View the 3D simulation
+
+The Python simulation generates a 7-joint robotic arm motion GIF and comparison images. GitHub can display them directly in this README (after the generation workflow finishes).
+
+![Animated 3D 7-DOF robotic arm showing a collision-checked planned trajectory](results/arm_motion_3d.gif)
+
+**[Open animation GIF](results/arm_motion_3d.gif)** | **[3D path-planning visualization](results/arm_3d_paths.png)** | **[Algorithm comparison charts](results/planner_comparison.png)**
+
+![3D 7-DOF path planning, A*, RRT, RRT-Connect and RRT*](results/arm_3d_paths.png)
+
+![Comparison of planner success rates, runtimes, joint motion and clearance](results/planner_comparison.png)
+
+To regenerate the simulation on your laptop:
+
+```powershell
+pip install -r requirements.txt
+python run_7dof.py --gif
+```
+
+The GitHub Actions workflow `.github/workflows/generate-simulation.yml` can also regenerate and commit these visuals.
+
 ## What's implemented
 
 - Seven **revolute joints** (7 joint variables, in radians internally), with local rotational axes `z, y, x, y, x, y, x`, joint limits and configurable link lengths.

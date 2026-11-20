@@ -1,19 +1,21 @@
-# Benchmark outputs
+# 3D simulation outputs
 
-The checked-in `summary.csv`, `trials.csv`, and `experiment_config.json` capture an illustrative three-trial experiment.
+This folder contains results from the **7-DOF 3D robotic-arm path-planning simulation**. GitHub can show the generated animation and charts directly:
 
-To regenerate images, full joint-angle path CSVs and experiment data locally:
+- **[Animated 3D robot (GIF)](arm_motion_3d.gif)** — planned arm motion with obstacles
+- **[3D planner comparison](arm_3d_paths.png)** — A*, RRT, RRT-Connect and RRT* scenes
+- **[Algorithm performance plots](planner_comparison.png)** — success, planning time, path length and clearance
+- **[Experiment configuration](experiment_config.json)**, **[raw trials](trials.csv)** and **[summary statistics](summary.csv)**
+
+![Animated 7-DOF robotic arm](arm_motion_3d.gif)
+
+The example images and GIF are generated from the checked-in Python code. The GitHub Actions workflow at `.github/workflows/generate-simulation.yml` runs the tests, renders the outputs and commits the images.
+
+To regenerate the simulation locally:
 
 ```bash
+pip install -r requirements.txt
 python run_7dof.py --trials 3 --iterations 1500 --astar-limit 450 --gif
 ```
 
-This produces:
-- `arm_3d_paths.png` — 3D robotic arm, obstacles and end-effector motion for each planner
-- `planner_comparison.png` — success, time, joint motion and clearance comparisons
-- `arm_motion_3d.gif` — animated seven-joint arm
-- `path_rrt_deg.csv`, `path_rrt_connect_deg.csv`, `path_rrt_star_deg.csv` — planning waypoints
-
-The binary example images and GIF were not uploaded through the GitHub connector, but can be generated from the source code. Timing measurements are hardware-dependent and should be reproduced before making quantitative claims.
-
-The original project is attributed in the top-level README; this repository is an independent 3D extension rather than an actual GitHub fork.
+**Scope:** this is a software simulation of an illustrative 7-revolute-joint robot, not a physical robot controller. Runtime values are hardware-dependent; rerun benchmarks for your own measurements.

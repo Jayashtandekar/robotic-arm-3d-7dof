@@ -1,8 +1,8 @@
 # 3D robotic arm path planning — 7 degrees of freedom
 
-An **independently implemented 3D and 7-DOF educational extension** inspired by [Aashika-jaiswal/Robotic_arm_path_planning](https://github.com/Aashika-jaiswal/Robotic_arm_path_planning). That project demonstrated planar 2-joint **A\***, **RRT**, and **RRT\***. This project compares those methods plus **bidirectional RRT-Connect** on the *same full 7-revolute-joint robotic arm in three-dimensional workspace*.
+An **independently implemented 3D and 7-DOF educational simulation** comparing **A\***, **RRT**, **RRT\*** and **bidirectional RRT-Connect** for a *7-revolute-joint robotic arm in three-dimensional workspace*.
 
-**Important attribution:** This is new implementation code, **not a GitHub fork nor a verbatim redistribution** of the original repository. The linked upstream repository had no LICENSE file when inspected (20 Nov 2026). Obtain the original author's permission before reusing their source/assets beyond what their terms permit. Upstream project links are listed in `original_2d_reference/README.md`.
+**Scope:** This repository contains an independent educational implementation. It is not a physical-robot controller.
 
 ## What's implemented
 
@@ -99,15 +99,13 @@ robotic_arm_3d_7dof/
 ├── test_scenes.py                # baseline scene and joint configurations
 ├── run_7dof.py                  # CLI experiments, CSV, plots, GIF
 ├── tests/test_motion.py          # deterministic validation tests
-├── original_2d_reference/README.md
 ├── results/                      # sample output images and tables
 ├── requirements.txt
 └── README.md
 ```
 
-## Original project and research
+## Research references
 
-- Original inspiration: [Aashika-jaiswal/Robotic_arm_path_planning](https://github.com/Aashika-jaiswal/Robotic_arm_path_planning).
 - S. M. LaValle, *Rapidly-exploring random trees: A new tool for path planning*, 1998.
 - S. Karaman and E. Frazzoli, *Sampling-based algorithms for optimal motion planning*, IJRR 2011.
 - Hart, Nilsson and Raphael, *A formal basis for the heuristic determination of minimum cost paths*, 1968.
